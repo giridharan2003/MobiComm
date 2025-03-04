@@ -1,0 +1,851 @@
+{
+  "users": [
+    {
+      "userid": 1,
+      "name": "John Doe",
+      "phone_number": "8489934388",
+      "email": "johndoe@example.com",
+      "id": "be01"
+    },
+    {
+      "userid": 2,
+      "name": "Jane Smith",
+      "phone_number": "9876543210",
+      "email": "janesmith@example.com",
+      "id": "cb9d"
+    },
+    {
+      "userid": 3,
+      "name": "Alice Johnson",
+      "phone_number": "7894561230",
+      "email": "alicejohnson@example.com",
+      "id": "3840"
+    },
+    {
+      "userid": 4,
+      "name": "Bob Brown",
+      "phone_number": "6789012345",
+      "email": "bobbrown@example.com",
+      "id": "3074"
+    },
+    {
+      "userid": 5,
+      "name": "Charlie Davis",
+      "phone_number": "5678901234",
+      "email": "charliedavis@example.com",
+      "id": "4e23"
+    },
+    {
+      "userid": 6,
+      "name": "Diana Evans",
+      "phone_number": "4567890123",
+      "email": "dianaevans@example.com",
+      "id": "9639"
+    },
+    {
+      "userid": 7,
+      "name": "Ethan Green",
+      "phone_number": "3456789012",
+      "email": "ethangreen@example.com",
+      "id": "aa0e"
+    },
+    {
+      "userid": 8,
+      "name": "Fiona Harris",
+      "phone_number": "2345678901",
+      "email": "fionaharris@example.com",
+      "id": "2d07"
+    },
+    {
+      "userid": 9,
+      "name": "George Clark",
+      "phone_number": "1234567890",
+      "email": "georgeclark@example.com",
+      "id": "dc4e"
+    },
+    {
+      "userid": 10,
+      "name": "Hannah Lewis",
+      "phone_number": "9988776655",
+      "email": "hannahlewis@example.com",
+      "id": "699d"
+    }
+  ],
+  "plans": [
+    {
+      "plan_id": "U201",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Talktime & Data Basic",
+      "price": 399,
+      "data": "1GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "28 Days",
+      "additional_features": "Free Caller Tune",
+      "special": "Budget",
+      "status": "Active",
+      "id": "f9d6"
+    },
+    {
+      "plan_id": "U202",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Data & Calls Plus",
+      "price": 599,
+      "data": "2GB/day",
+      "call_sms": "Unlimited Calls & 200 SMS/day",
+      "validity": "56 Days",
+      "additional_features": "OTT Subscription",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "ce73"
+    },
+    {
+      "plan_id": "U203",
+      "category": "Unlimited Plans",
+      "plan_name": "Premium Unlimited Pack",
+      "price": 999,
+      "data": "3GB/day",
+      "call_sms": "Unlimited Calls & 300 SMS/day",
+      "validity": "84 Days",
+      "additional_features": "Amazon Prime & Netflix Free",
+      "special": "",
+      "status": "Active",
+      "id": "97e6"
+    },
+    {
+      "plan_id": "U204",
+      "category": "Unlimited Plans",
+      "plan_name": "Ultimate Unlimited",
+      "price": 1299,
+      "data": "4GB/day",
+      "call_sms": "Unlimited Calls & 400 SMS/day",
+      "validity": "90 Days",
+      "additional_features": "Free Gaming Pass",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "acc3"
+    },
+    {
+      "plan_id": "U205",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Lite",
+      "price": 299,
+      "data": "500MB/day",
+      "call_sms": "Unlimited Calls & 50 SMS/day",
+      "validity": "28 Days",
+      "additional_features": "Free Caller Tune",
+      "special": "Budget",
+      "status": "Active",
+      "id": "d1be"
+    },
+    {
+      "plan_id": "U206",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Pro",
+      "price": 799,
+      "data": "2.5GB/day",
+      "call_sms": "Unlimited Calls & 250 SMS/day",
+      "validity": "56 Days",
+      "additional_features": "Free OTT Subscription",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "aeb6"
+    },
+    {
+      "plan_id": "U207",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Max",
+      "price": 899,
+      "data": "3.5GB/day",
+      "call_sms": "Unlimited Calls & 350 SMS/day",
+      "validity": "70 Days",
+      "additional_features": "Free Amazon Prime",
+      "special": "",
+      "status": "Active",
+      "id": "c76b"
+    },
+    {
+      "plan_id": "U208",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Ultra",
+      "price": 1499,
+      "data": "5GB/day",
+      "call_sms": "Unlimited Calls & 500 SMS/day",
+      "validity": "90 Days",
+      "additional_features": "Free Netflix & Gaming Pass",
+      "special": "",
+      "status": "Active",
+      "id": "7e2e"
+    },
+    {
+      "plan_id": "U209",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Family Pack",
+      "price": 1999,
+      "data": "6GB/day",
+      "call_sms": "Unlimited Calls & 600 SMS/day",
+      "validity": "120 Days",
+      "additional_features": "Family Sharing (4 Members)",
+      "special": "Family Offer",
+      "status": "Active",
+      "id": "0bff"
+    },
+    {
+      "plan_id": "U210",
+      "category": "Unlimited Plans",
+      "plan_name": "Unlimited Mega",
+      "price": 2499,
+      "data": "10GB/day",
+      "call_sms": "Unlimited Calls & 1000 SMS/day",
+      "validity": "180 Days",
+      "additional_features": "Free Netflix, Amazon Prime & Gaming Pass",
+      "special": "Best Value",
+      "status": "Active",
+      "id": "1522"
+    },
+    {
+      "plan_id": "V301",
+      "category": "Validity Plans",
+      "plan_name": "Long Validity Basic",
+      "price": 799,
+      "data": "1GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "180 Days",
+      "additional_features": "Free Caller Tune",
+      "special": "Budget",
+      "status": "Active",
+      "id": "eb3a"
+    },
+    {
+      "plan_id": "V302",
+      "category": "Validity Plans",
+      "plan_name": "Annual Validity Plan",
+      "price": 1499,
+      "data": "2GB/day",
+      "call_sms": "Unlimited Calls & 200 SMS/day",
+      "validity": "365 Days",
+      "additional_features": "Free OTT Subscription",
+      "special": "",
+      "status": "Active",
+      "id": "eaaa"
+    },
+    {
+      "plan_id": "V303",
+      "category": "Validity Plans",
+      "plan_name": "6-Month Validity Plus",
+      "price": 999,
+      "data": "1.5GB/day",
+      "call_sms": "Unlimited Calls & 150 SMS/day",
+      "validity": "180 Days",
+      "additional_features": "Free Caller Tune",
+      "special": "Budget",
+      "status": "Active",
+      "id": "d958"
+    },
+    {
+      "plan_id": "V304",
+      "category": "Validity Plans",
+      "plan_name": "9-Month Validity Pro",
+      "price": 1299,
+      "data": "2GB/day",
+      "call_sms": "Unlimited Calls & 200 SMS/day",
+      "validity": "270 Days",
+      "additional_features": "Free OTT Subscription",
+      "special": "",
+      "status": "Active",
+      "id": "3f6d"
+    },
+    {
+      "plan_id": "V305",
+      "category": "Validity Plans",
+      "plan_name": "12-Month Validity Ultra",
+      "price": 1799,
+      "data": "3GB/day",
+      "call_sms": "Unlimited Calls & 300 SMS/day",
+      "validity": "365 Days",
+      "additional_features": "Free Netflix & Amazon Prime",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "f9e2"
+    },
+    {
+      "plan_id": "V306",
+      "category": "Validity Plans",
+      "plan_name": "18-Month Validity Mega",
+      "price": 2499,
+      "data": "4GB/day",
+      "call_sms": "Unlimited Calls & 400 SMS/day",
+      "validity": "540 Days",
+      "additional_features": "Free Gaming Pass",
+      "special": "Best Value",
+      "status": "Active",
+      "id": "c1f9"
+    },
+    {
+      "plan_id": "V307",
+      "category": "Validity Plans",
+      "plan_name": "24-Month Validity Super",
+      "price": 3499,
+      "data": "5GB/day",
+      "call_sms": "Unlimited Calls & 500 SMS/day",
+      "validity": "720 Days",
+      "additional_features": "Free Netflix, Amazon Prime & Gaming Pass",
+      "special": "Long-Term Offer",
+      "status": "Active",
+      "id": "3fd3"
+    },
+    {
+      "plan_id": "V308",
+      "category": "Validity Plans",
+      "plan_name": "3-Month Validity Lite",
+      "price": 499,
+      "data": "1GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "90 Days",
+      "additional_features": "Free Caller Tune",
+      "special": "Budget",
+      "status": "Active",
+      "id": "2f8f"
+    },
+    {
+      "plan_id": "V309",
+      "category": "Validity Plans",
+      "plan_name": "15-Month Validity Premium",
+      "price": 1999,
+      "data": "3.5GB/day",
+      "call_sms": "Unlimited Calls & 350 SMS/day",
+      "validity": "450 Days",
+      "additional_features": "Free OTT Subscription",
+      "special": "",
+      "status": "Active",
+      "id": "4dde"
+    },
+    {
+      "plan_id": "D401",
+      "category": "Data Plans",
+      "plan_name": "Basic Data Booster",
+      "price": 149,
+      "data": "2GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "7 Days",
+      "additional_features": "Speed Booster",
+      "special": "",
+      "status": "Active",
+      "id": "9fd6"
+    },
+    {
+      "plan_id": "D402",
+      "category": "Data Plans",
+      "plan_name": "Heavy Data Pack",
+      "price": 299,
+      "data": "5GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "28 Days",
+      "additional_features": "No Speed Restriction",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "74aa"
+    },
+    {
+      "plan_id": "D403",
+      "category": "Data Plans",
+      "plan_name": "Super Data Pack",
+      "price": 499,
+      "data": "10GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "30 Days",
+      "additional_features": "High-Speed Data",
+      "special": "Budget",
+      "status": "Active",
+      "id": "ef23"
+    },
+    {
+      "plan_id": "D404",
+      "category": "Data Plans",
+      "plan_name": "Mega Data Pack",
+      "price": 699,
+      "data": "20GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "60 Days",
+      "additional_features": "Unlimited Speed",
+      "special": "",
+      "status": "Active",
+      "id": "a570"
+    },
+    {
+      "plan_id": "D405",
+      "category": "Data Plans",
+      "plan_name": "Ultra Data Pack",
+      "price": 999,
+      "data": "50GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "90 Days",
+      "additional_features": "5G Access",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "79c7"
+    },
+    {
+      "plan_id": "D406",
+      "category": "Data Plans",
+      "plan_name": "Lite Data Pack",
+      "price": 99,
+      "data": "1GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "3 Days",
+      "additional_features": "Speed Booster",
+      "special": "Budget",
+      "status": "Active",
+      "id": "1880"
+    },
+    {
+      "plan_id": "D407",
+      "category": "Data Plans",
+      "plan_name": "Pro Data Pack",
+      "price": 399,
+      "data": "8GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "21 Days",
+      "additional_features": "High-Speed Data",
+      "special": "",
+      "status": "Active",
+      "id": "701e"
+    },
+    {
+      "plan_id": "D408",
+      "category": "Data Plans",
+      "plan_name": "Family Data Pack",
+      "price": 1299,
+      "data": "100GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "180 Days",
+      "additional_features": "Shared Data (4 Members)",
+      "special": "Family Offer",
+      "status": "Active",
+      "id": "0716"
+    },
+    {
+      "plan_id": "D409",
+      "category": "Data Plans",
+      "plan_name": "Student Data Pack",
+      "price": 199,
+      "data": "3GB Total",
+      "call_sms": "No Calls/SMS Included",
+      "validity": "14 Days",
+      "additional_features": "Discounts on E-learning Platforms",
+      "special": "Student Offer",
+      "status": "Active",
+      "id": "684d"
+    },
+    {
+      "plan_id": "UD501",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Truly Unlimited Data",
+      "price": 1999,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 500 SMS/day",
+      "validity": "90 Days",
+      "additional_features": "5G Network Access",
+      "special": "",
+      "status": "Active",
+      "id": "d9fc"
+    },
+    {
+      "plan_id": "UD502",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Premium Unlimited Data",
+      "price": 2499,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 1000 SMS/day",
+      "validity": "180 Days",
+      "additional_features": "Priority Network Access",
+      "special": "Budget",
+      "status": "Active",
+      "id": "9992"
+    },
+    {
+      "plan_id": "UD503",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Ultra Unlimited Data",
+      "price": 2999,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 1500 SMS/day",
+      "validity": "365 Days",
+      "additional_features": "Free Netflix & Amazon Prime",
+      "special": "Best Value",
+      "status": "Active",
+      "id": "117d"
+    },
+    {
+      "plan_id": "UD504",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Family Unlimited Data",
+      "price": 3999,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 2000 SMS/day",
+      "validity": "180 Days",
+      "additional_features": "Shared Data (4 Members)",
+      "special": "Family Offer",
+      "status": "Active",
+      "id": "18fb"
+    },
+    {
+      "plan_id": "UD505",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Student Unlimited Data",
+      "price": 1499,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 500 SMS/day",
+      "validity": "90 Days",
+      "additional_features": "Discounts on E-learning Platforms",
+      "special": "Student Offer",
+      "status": "Active",
+      "id": "527d"
+    },
+    {
+      "plan_id": "UD506",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Lite Unlimited Data",
+      "price": 999,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 200 SMS/day",
+      "validity": "30 Days",
+      "additional_features": "5G Access",
+      "special": "Budget",
+      "status": "Active",
+      "id": "30f8"
+    },
+    {
+      "plan_id": "UD507",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Pro Unlimited Data",
+      "price": 1799,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 750 SMS/day",
+      "validity": "120 Days",
+      "additional_features": "Free OTT Subscription",
+      "special": "",
+      "status": "Active",
+      "id": "ba13"
+    },
+    {
+      "plan_id": "UD508",
+      "category": "Unlimited Data Plans",
+      "plan_name": "Mega Unlimited Data",
+      "price": 3499,
+      "data": "Unlimited",
+      "call_sms": "Unlimited Calls & 3000 SMS/day",
+      "validity": "365 Days",
+      "additional_features": "Free Netflix, Amazon Prime & Gaming Pass",
+      "special": "Best Value",
+      "status": "Active",
+      "id": "7466"
+    },
+    {
+      "plan_id": "S601",
+      "category": "Special Plans",
+      "plan_name": "International Roaming Pack",
+      "price": 999,
+      "data": "1GB/day",
+      "call_sms": "100 International Minutes & 50 SMS/day",
+      "validity": "7 Days",
+      "additional_features": "Multi-country Access",
+      "special": "Most popular",
+      "status": "Active",
+      "id": "2299"
+    },
+    {
+      "plan_id": "S602",
+      "category": "Special Plans",
+      "plan_name": "Student Offer Pack",
+      "price": 349,
+      "data": "2GB/day",
+      "call_sms": "Unlimited Calls & 150 SMS/day",
+      "validity": "60 Days",
+      "additional_features": "Discounts on E-learning Platforms",
+      "special": "",
+      "status": "Active",
+      "id": "e219"
+    },
+    {
+      "plan_id": "S603",
+      "category": "Special Plans",
+      "plan_name": "Senior Citizen Pack",
+      "price": 199,
+      "data": "1GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "30 Days",
+      "additional_features": "Free Health Checkup Consultation",
+      "special": "Senior Citizen Offer",
+      "status": "Active",
+      "id": "4403"
+    },
+    {
+      "plan_id": "S604",
+      "category": "Special Plans",
+      "plan_name": "Corporate Pack",
+      "price": 499,
+      "data": "3GB/day",
+      "call_sms": "Unlimited Calls & 200 SMS/day",
+      "validity": "30 Days",
+      "additional_features": "Free Office Tools Subscription",
+      "special": "Corporate Offer",
+      "status": "Active",
+      "id": "abf6"
+    },
+    {
+      "plan_id": "S605",
+      "category": "Special Plans",
+      "plan_name": "Traveler Pack",
+      "price": 799,
+      "data": "2GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "14 Days",
+      "additional_features": "Free Travel Insurance",
+      "special": "Travel Offer",
+      "status": "Active",
+      "id": "3a96"
+    },
+    {
+      "plan_id": "S606",
+      "category": "Special Plans",
+      "plan_name": "Gaming Pack",
+      "price": 599,
+      "data": "5GB/day",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "30 Days",
+      "additional_features": "Free Gaming Pass",
+      "special": "Gaming Offer",
+      "status": "Active",
+      "id": "53b4"
+    },
+    {
+      "plan_id": "S607",
+      "category": "Special Plans",
+      "plan_name": "Streaming Pack",
+      "price": 699,
+      "data": "3GB/day",
+      "call_sms": "Unlimited Calls & 150 SMS/day",
+      "validity": "30 Days",
+      "additional_features": "Free Netflix & Amazon Prime",
+      "special": "Streaming Offer",
+      "status": "Active",
+      "id": "9c8b"
+    },
+    {
+      "plan_id": "S608",
+      "category": "Special Plans",
+      "plan_name": "Night Pack",
+      "price": 99,
+      "data": "Unlimited (Night Only)",
+      "call_sms": "Unlimited Calls & 50 SMS/day",
+      "validity": "7 Days",
+      "additional_features": "Night Data (12 AM - 6 AM)",
+      "special": "Budget",
+      "status": "Active",
+      "id": "2e52"
+    },
+    {
+      "plan_id": "S609",
+      "category": "Special Plans",
+      "plan_name": "Weekend Pack",
+      "price": 149,
+      "data": "Unlimited (Weekends Only)",
+      "call_sms": "Unlimited Calls & 100 SMS/day",
+      "validity": "7 Days",
+      "additional_features": "Weekend Data (Sat & Sun)",
+      "special": "Weekend Offer",
+      "status": "Active",
+      "id": "3680"
+    },
+    {
+      "id": "c9fc",
+      "plan_id": "U3001",
+      "category": "Unlimited Plans",
+      "plan_name": "123",
+      "price": "200",
+      "data": "2",
+      "call_sms": "Unlimited",
+      "validity": "28",
+      "additional_features": "None",
+      "special": "Budget",
+      "status": "Active"
+    }
+  ],
+  "userHistory": [
+    {
+      "userId": 1,
+      "planId": "U201",
+      "dateOfPayment": "2024-05-10",
+      "paymentType": "Credit Card",
+      "id": "0614"
+    },
+    {
+      "userId": 2,
+      "planId": "U202",
+      "dateOfPayment": "2024-09-15",
+      "paymentType": "Debit Card",
+      "id": "a49c"
+    },
+    {
+      "userId": 3,
+      "planId": "D403",
+      "dateOfPayment": "2025-01-22",
+      "paymentType": "UPI",
+      "id": "ce1e"
+    },
+    {
+      "userId": 4,
+      "planId": "V302",
+      "dateOfPayment": "2024-11-05",
+      "paymentType": "Net Banking",
+      "id": "7112"
+    },
+    {
+      "userId": 5,
+      "planId": "U203",
+      "dateOfPayment": "2024-07-18",
+      "paymentType": "Credit Card",
+      "id": "cd85"
+    },
+    {
+      "userId": 6,
+      "planId": "S601",
+      "dateOfPayment": "2024-12-28",
+      "paymentType": "Debit Card",
+      "id": "8e6c"
+    },
+    {
+      "userId": 7,
+      "planId": "U204",
+      "dateOfPayment": "2025-02-10",
+      "paymentType": "UPI",
+      "id": "4495"
+    },
+    {
+      "userId": 8,
+      "planId": "D405",
+      "dateOfPayment": "2024-08-03",
+      "paymentType": "Net Banking",
+      "id": "3da4"
+    },
+    {
+      "userId": 9,
+      "planId": "V304",
+      "dateOfPayment": "2024-06-12",
+      "paymentType": "Credit Card",
+      "id": "c532"
+    },
+    {
+      "userId": 10,
+      "planId": "U205",
+      "dateOfPayment": "2024-10-20",
+      "paymentType": "Debit Card",
+      "id": "3ed5"
+    },
+    {
+      "userId": 1,
+      "planId": "UD501",
+      "dateOfPayment": "2024-12-02",
+      "paymentType": "UPI",
+      "id": "65c4"
+    },
+    {
+      "userId": 2,
+      "planId": "V305",
+      "dateOfPayment": "2024-09-30",
+      "paymentType": "Net Banking",
+      "id": "136e"
+    },
+    {
+      "userId": 3,
+      "planId": "U206",
+      "dateOfPayment": "2025-01-06",
+      "paymentType": "Credit Card",
+      "id": "8d34"
+    },
+    {
+      "userId": 4,
+      "planId": "S602",
+      "dateOfPayment": "2024-08-27",
+      "paymentType": "Debit Card",
+      "id": "0346"
+    },
+    {
+      "userId": 5,
+      "planId": "D407",
+      "dateOfPayment": "2025-02-09",
+      "paymentType": "UPI",
+      "id": "3ae3"
+    },
+    {
+      "userId": 6,
+      "planId": "U207",
+      "dateOfPayment": "2024-11-11",
+      "paymentType": "Net Banking",
+      "id": "da9c"
+    },
+    {
+      "userId": 7,
+      "planId": "UD502",
+      "dateOfPayment": "2024-09-03",
+      "paymentType": "Credit Card",
+      "id": "4e79"
+    },
+    {
+      "userId": 8,
+      "planId": "V306",
+      "dateOfPayment": "2024-10-08",
+      "paymentType": "Debit Card",
+      "id": "ef1d"
+    },
+    {
+      "userId": 9,
+      "planId": "U208",
+      "dateOfPayment": "2024-05-22",
+      "paymentType": "UPI",
+      "id": "504c"
+    },
+    {
+      "userId": 3,
+      "planId": "D403",
+      "dateOfPayment": "2025-02-02",
+      "paymentType": "UPI",
+      "id": "d6d7"
+    },
+    {
+      "userId": 5,
+      "planId": "U203",
+      "dateOfPayment": "2025-01-09",
+      "paymentType": "Credit Card",
+      "id": "036f"
+    },
+    {
+      "userId": 7,
+      "planId": "U204",
+      "dateOfPayment": "2025-01-02",
+      "paymentType": "Debit Card",
+      "id": "9e8c"
+    },
+    {
+      "userId": 8,
+      "planId": "D405",
+      "dateOfPayment": "2025-02-02",
+      "paymentType": "Net Banking",
+      "id": "8d9f"
+    },
+    {
+      "userId": 9,
+      "planId": "V304",
+      "dateOfPayment": "2025-02-02",
+      "paymentType": "Credit Card",
+      "id": "1bd0"
+    },
+    {
+      "userId": 10,
+      "planId": "U205",
+      "dateOfPayment": "2025-02-02",
+      "paymentType": "Debit Card",
+      "id": "47d2"
+    }
+  ]
+}

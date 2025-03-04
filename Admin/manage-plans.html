@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Manage Plans</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    /* Ensure the table container is scrollable on small screens */
+.table-container {
+  max-height: 400px; /* Adjust this value as needed */
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+/* Optional: Add a border to the table container for better visibility */
+.table-container {
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="home.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">Mobi Admin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div><!-- End Search Bar -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+            <a class="d-none d-md-block text-dark">Giridharan</a>
+          </a><!-- End Profile Icon -->
+
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="home.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="userList.html">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li><!-- End User Management Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link" href="manage-plans.html">
+          <i class="bi bi-kanban"></i>
+          <span>Manage Plans</span>
+        </a>
+      </li><!-- End Plan Management Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-box-arrow-left"></i>
+          <span>Sign Out</span>
+        </a>
+      </li><!-- End Sign outNav -->
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+
+  <!-- ======= Main Section ======= -->
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Manage Plans</h1>
+    </div>
+
+    <section class="section">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Plans</h5>
+              <div class="text-end">
+                <button class="btn btn-success" onclick="openAddPlanModal()">Add Plan</button>
+              </div>
+              <div class="table-container"></div>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Validity</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="plansTableBody"></tbody>
+              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><!-- End Main Section -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <!-- Footer content (same as before) -->
+  </footer><!-- End Footer -->
+
+  <!-- Modal for Modify Plan -->
+  <div class="modal fade" id="modifyPlanModal" tabindex="-1" aria-labelledby="modifyPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modifyPlanModalLabel">Modify Plan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="modifyPlanForm">
+            <div class="mb-3">
+              <label for="planId" class="form-label">Plan ID</label>
+              <input type="text" class="form-control" id="planId" readonly>
+            </div>
+            <div class="mb-3">
+              <label for="planName" class="form-label">Plan Name</label>
+              <input type="text" class="form-control" id="planName">
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price">
+            </div>
+            <div class="mb-3">
+              <label for="validity" class="form-label">Validity</label>
+              <input type="text" class="form-control" id="validity">
+            </div>
+            <div class="mb-3">
+              <label for="data" class="form-label">Data</label>
+              <input type="text" class="form-control" id="data">
+            </div>
+            <div class="mb-3">
+              <label for="callSms" class="form-label">Call & SMS</label>
+              <input type="text" class="form-control" id="callSms">
+            </div>
+            <div class="mb-3">
+              <label for="additionalFeatures" class="form-label">Additional Features</label>
+              <input type="text" class="form-control" id="additionalFeatures">
+            </div>
+            <div class="mb-3">
+              <label for="special" class="form-label">Special</label>
+              <input type="text" class="form-control" id="special">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" id="saveChangesButton">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPlanModalLabel">Add Plan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addPlanForm">
+            <div class="mb-3">
+              <label for="newPlanId" class="form-label">Plan ID</label>
+              <input type="text" class="form-control" id="newPlanId">
+            </div>
+            <div class="mb-3">
+              <label for="newCategory" class="form-label">Category</label>
+              <input type="text" class="form-control" id="newCategory">
+            </div>
+            <div class="mb-3">
+              <label for="newPlanName" class="form-label">Plan Name</label>
+              <input type="text" class="form-control" id="newPlanName">
+            </div>
+            <div class="mb-3">
+              <label for="newPrice" class="form-label">Price</label>
+              <input type="number" class="form-control" id="newPrice">
+            </div>
+            <div class="mb-3">
+              <label for="newValidity" class="form-label">Validity</label>
+              <input type="text" class="form-control" id="newValidity">
+            </div>
+            <div class="mb-3">
+              <label for="newData" class="form-label">Data</label>
+              <input type="text" class="form-control" id="newData">
+            </div>
+            <div class="mb-3">
+              <label for="newCallSms" class="form-label">Call & SMS</label>
+              <input type="text" class="form-control" id="newCallSms">
+            </div>
+            <div class="mb-3">
+              <label for="newAdditionalFeatures" class="form-label">Additional Features</label>
+              <input type="text" class="form-control" id="newAdditionalFeatures">
+            </div>
+            <div class="mb-3">
+              <label for="newSpecial" class="form-label">Special</label>
+              <input type="text" class="form-control" id="newSpecial">
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="addPlan()">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Custom Script -->
+  <script>
+    let plansData = [];
+
+    async function fetchPlans() {
+      try {
+        const response = await fetch('http://localhost:3000/plans');
+        if (!response.ok) {
+          throw new Error('Failed to fetch plans');
+        }
+        const data = await response.json();
+        plansData = data; // Store the fetched data
+        displayPlans(plansData);
+      } catch (error) {
+        console.error('Error fetching plans:', error);
+      }
+    }
+
+    // Display plans in the table
+    function displayPlans(plans) {
+      const tableBody = document.getElementById('plansTableBody');
+      tableBody.innerHTML = '';
+
+      plans.forEach(plan => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${plan.plan_id}</td>
+          <td>${plan.plan_name}</td>
+          <td>₹${plan.price}</td>
+          <td>${plan.validity}</td>
+          <td>
+            <button class="btn ${plan.status === 'Active' ? 'btn-success' : 'btn-secondary'}" onclick="toggleStatus('${plan.plan_id}')">
+              ${plan.status === 'Active' ? 'Active' : 'Inactive'}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-primary" onclick="openModifyModal('${plan.plan_id}')">Modify</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+
+    // Toggle plan status
+    async function toggleStatus(planId) {
+      const plan = plansData.find(p => p.plan_id === planId);
+      plan.status = plan.status === 'Active' ? 'Inactive' : 'Active';
+
+      // Update the server
+      await updatePlan(plan);
+
+      // Refresh the table
+      displayPlans(plansData);
+    }
+
+    // Open modify modal
+    function openModifyModal(planId) {
+      const plan = plansData.find(p => p.plan_id === planId);
+      document.getElementById('planId').value = plan.plan_id;
+      document.getElementById('planName').value = plan.plan_name;
+      document.getElementById('price').value = plan.price;
+      document.getElementById('validity').value = plan.validity;
+      document.getElementById('data').value = plan.data;
+      document.getElementById('callSms').value = plan.call_sms;
+      document.getElementById('additionalFeatures').value = plan.additional_features;
+      document.getElementById('special').value = plan.special;
+
+      const modal = new bootstrap.Modal(document.getElementById('modifyPlanModal'));
+      modal.show();
+    }
+
+    // Save changes in the modal
+    document.getElementById('saveChangesButton').addEventListener('click', async () => {
+      const planId = document.getElementById('planId').value;
+      const plan = plansData.find(p => p.plan_id === planId);
+
+      plan.plan_name = document.getElementById('planName').value;
+      plan.price = document.getElementById('price').value;
+      plan.validity = document.getElementById('validity').value;
+      plan.data = document.getElementById('data').value;
+      plan.call_sms = document.getElementById('callSms').value;
+      plan.additional_features = document.getElementById('additionalFeatures').value;
+      plan.special = document.getElementById('special').value;
+
+      // Update the server
+      await updatePlan(plan);
+
+      // Refresh the table
+      displayPlans(plansData);
+
+      // Close the modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('modifyPlanModal'));
+      modal.hide();
+    });
+
+    // Update plan on the server
+    async function updatePlan(plan) {
+      try {
+        const response = await fetch(`http://localhost:3000/plans/${plan.plan_id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(plan),
+        });
+        if (!response.ok) {
+          throw new Error('Failed to update plan');
+        }
+      } catch (error) {
+        console.error('Error updating plan:', error);
+      }
+    }
+
+    // Fetch plans when the page loads
+    document.addEventListener('DOMContentLoaded', fetchPlans);
+
+    function openAddPlanModal() {
+      document.getElementById("addPlanForm").reset();
+      new bootstrap.Modal(document.getElementById("addPlanModal")).show();
+    }
+
+    async function addPlan() {
+      const newPlan = {
+        plan_id: document.getElementById("newPlanId").value,
+        category: document.getElementById("newCategory").value,
+        plan_name: document.getElementById("newPlanName").value,
+        price: document.getElementById("newPrice").value,
+        data: document.getElementById("newData").value,
+        call_sms: document.getElementById("newCallSms").value,
+        validity: document.getElementById("newValidity").value,
+        additional_features: document.getElementById("newAdditionalFeatures").value,
+        special: document.getElementById("newSpecial").value,
+        status: "Active"
+      };
+
+      try {
+        const response = await fetch('http://localhost:3000/plans', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newPlan)
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to add plan');
+        }
+
+        plansData.push(newPlan);
+        displayPlans(plansData);
+        bootstrap.Modal.getInstance(document.getElementById("addPlanModal")).hide();
+      } catch (error) {
+        console.error('Error adding plan:', error);
+      }
+    }
+  </script>
+</body>
+
+</html>
