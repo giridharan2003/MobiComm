@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Mobi Comm Admin</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <main class="d-flex min-vh-100 align-items-center justify-content-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6">
+
+          <div class="text-center mb-4">
+            <h4>Mobi Comm Admin</h4>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title text-center">Login to Your Account</h5>
+
+              <form id="adminLoginForm">
+                <div class="mb-3">
+                  <label for="adminUsername" class="form-label">Username</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" class="form-control" id="adminUsername" required>
+                  </div>
+                  <div class="text-danger small" id="usernameError"></div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="adminPassword" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="adminPassword" required>
+                  <div class="text-danger small" id="passwordError"></div>
+                </div>
+
+                <div class="mb-3 form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100" id="loginBtn">Login</button>
+                <div class="text-danger small mt-2 text-center" id="loginError"></div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('adminLoginForm');
+      const usernameInput = document.getElementById('adminUsername');
+      const passwordInput = document.getElementById('adminPassword');
+      const rememberMe = document.getElementById('rememberMe');
+      const loginBtn = document.getElementById('loginBtn');
+      const usernameError = document.getElementById('usernameError');
+      const passwordError = document.getElementById('passwordError');
+      const loginError = document.getElementById('loginError');
+
+      // Load stored credentials if "Remember Me" was checked
+      if (localStorage.getItem('rememberMe') === 'true') {
+        usernameInput.value = localStorage.getItem('savedUsername') || '';
+        rememberMe.checked = true;
+      }
+
+      loginForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        // Reset error messages
+        usernameError.textContent = '';
+        passwordError.textContent = '';
+        loginError.textContent = '';
+
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        if (!username) {
+          usernameError.textContent = 'Username is required.';
+          return;
+        }
+        if (!password) {
+          passwordError.textContent = 'Password is required.';
+          return;
+        }
+
+        loginBtn.style.display = 'none';
+
+        try {
+          const response = await fetch('http://localhost:2003/auth/admin/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ username, password }),
+          });
+
+          const data = await response.json();
+
+          if (!response.ok) {
+            throw new Error(data.message || 'Invalid login credentials');
+          }
+
+          // Store token in localStorage
+          localStorage.setItem('adminToken', data.token);
+
+          if (rememberMe.checked) {
+            localStorage.setItem('rememberMe', 'true');
+            localStorage.setItem('savedUsername', username);
+          } else {
+            localStorage.removeItem('rememberMe');
+            localStorage.removeItem('savedUsername');
+          }
+
+          // Show loading animation for 1 second before redirecting
+          setTimeout(() => {
+            window.location.href = 'home.html';
+          }, 1000);
+
+        } catch (error) {
+          loginError.textContent = error.message;
+          loginBtn.style.display = 'block';
+          loading.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

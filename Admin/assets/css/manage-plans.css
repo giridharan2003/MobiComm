@@ -1,0 +1,50 @@
+/* Category Tabs Container */
+#categoryNavContainer {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+    padding: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#categoryNav .btn.category.active {
+    background-color: #008374;
+    color: #ffffff;
+}
+
+#categoryNav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: #008374 #f1f1f1;
+    padding-bottom: 10px;
+}
+
+#categoryNav::-webkit-scrollbar {
+    height: 8px;
+}
+
+#categoryNav::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#categoryNav::-webkit-scrollbar-thumb {
+    background: #008374;
+    border-radius: 4px;
+}
+
+#categoryNav .btn {
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+#categoryNav .btn:hover {
+    background-color: #008374;
+    color: #ffffff;
+}

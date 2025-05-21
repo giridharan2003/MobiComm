@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Manage Plans</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="home.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Mobi Admin</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+
+    <div class="search-bar">
+      <form class="search-form d-flex align-items-center" method="POST" action="#">
+        <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+        <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+      </form>
+    </div>
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li>
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a>
+
+        </li>
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+            <a class="d-none d-md-block text-dark">Giridharan</a>
+          </a>
+
+        </li>
+
+      </ul>
+    </nav>
+
+  </header>
+
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="home.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="userList.html">
+          <i class="bi bi-people"></i>
+          <span>Users</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="manage-plans.html">
+          <i class="bi bi-kanban"></i>
+          <span>Manage Plans</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="index.html">
+          <i class="bi bi-box-arrow-left"></i>
+          <span id="logoutBtn">Sign Out</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside>
+
+  <main id="main" class="main">
+    <h2 class="my-4 text-center">Plan Management</h2>
+
+    <!-- Category Management -->
+    <div class="container mt-4">
+
+      <!-- Add Category Button -->
+      <div class="text-end mb-3">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+          Add Category <i class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- Categories Table -->
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead class="table-dark">
+            <tr>
+              <th>S.No</th>
+              <th>Category Name</th>
+            </tr>
+          </thead>
+          <tbody id="categoryTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Plans Management -->
+    <div class="container mt-4">
+
+      <!-- Add Plan Button -->
+      <div class="text-end mb-3">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPlanModal">
+          Add Plan <i class="fas fa-plus"></i>
+        </button>
+      </div>
+
+      <!-- Nav Tabs -->
+      <ul class="nav nav-tabs mb-3" id="planTabs">
+        <li class="nav-item">
+          <a class="nav-link active" id="active-plans-tab" data-bs-toggle="tab" href="#activePlans">Active Plans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="inactive-plans-tab" data-bs-toggle="tab" href="#inactivePlans">Inactive Plans</a>
+        </li>
+      </ul>
+
+      <div class="search-bar">
+        <input type="text" id="searchPlans" class="form-control" placeholder="Search plans...">
+      </div>
+
+
+      <div class="tab-content">
+        <!-- Active Plans Tab -->
+        <div class="tab-pane fade show active" id="activePlans">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>Plan ID</th>
+                  <th>Plan Category</th>
+                  <th>Price</th>
+                  <th>Data</th>
+                  <th>Calls</th>
+                  <th>Validity</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="activePlansTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Inactive Plans Tab -->
+        <div class="tab-pane fade" id="inactivePlans">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>Plan ID</th>
+                  <th>Plan Category</th>
+                  <th>Price</th>
+                  <th>Data</th>
+                  <th>Calls</th>
+                  <th>Validity</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="inactivePlansTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Mobi Comm</span></strong>. All Rights Reserved
+    </div>
+  </footer>
+
+  <!-- Add Plan Modal -->
+  <div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addPlanModalLabel">Add New Plan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addPlanForm">
+            <div class="mb-3">
+              <label for="category" class="form-label">Category</label>
+              <select class="form-select" id="category" required></select>
+            </div>
+
+            <div class="mb-3 d-none" id="badgeDiv">
+              <label for="badge" class="form-label">Badge</label>
+              <input type="text" class="form-control" id="badge">
+            </div>
+
+            <div class="mb-3 d-none" id="priceDiv">
+              <label for="price" class="form-label">Price</label>
+              <input type="number" class="form-control" id="price">
+            </div>
+
+            <div class="mb-3 d-none" id="validityDaysDiv">
+              <label for="validityDays" class="form-label">Validity Days</label>
+              <input type="number" class="form-control" id="validityDays">
+            </div>
+
+            <div class="mb-3 d-none" id="dataLimitDiv">
+              <label for="dataLimit" class="form-label">Data Limit</label>
+              <input type="text" class="form-control" id="dataLimit">
+            </div>
+
+            <div class="mb-3 d-none" id="callDiv">
+              <label for="call" class="form-label">Call</label>
+              <select class="form-select" id="call">
+                <option value="UNLIMITED">Unlimited</option>
+                <option value="LIMITED">Limited</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-none" id="statusDiv">
+              <label for="status" class="form-label">Status</label>
+              <select class="form-select" id="status">
+                <option value="ACTIVE">Active</option>
+                <option value="INACTIVE">Inactive</option>
+              </select>
+            </div>
+
+            <div class="mb-3 d-none" id="smsDiv">
+              <label for="sms" class="form-label">SMS</label>
+              <input type="number" class="form-control" id="sms">
+            </div>
+
+            <div class="mb-3 d-none" id="additionalFeaturesDiv">
+              <label for="additionalFeatures" class="form-label">Additional Features</label>
+              <input type="text" class="form-control" id="additionalFeatures">
+            </div>
+
+            <div class="mb-3 d-none" id="ottDiv">
+              <label for="ott" class="form-label">OTT</label>
+              <input type="text" class="form-control" id="ott">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Plan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Plan Modal -->
+  <div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editPlanModalLabel">Edit Plan</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editPlanForm">
+            <input type="hidden" id="editPlanId">
+            <div class="mb-3" id="editCategoryDiv">
+              <label for="editCategory" class="form-label">Category</label>
+              <input type="text" class="form-control" id="editCategory" readonly>
+            </div>
+            <div class="mb-3" id="editPriceDiv">
+              <label for="editPrice" class="form-label">Price</label>
+              <input type="number" class="form-control" id="editPrice">
+            </div>
+            <div class="mb-3" id="editDataDiv">
+              <label for="editData" class="form-label">Data Limit</label>
+              <input type="text" class="form-control" id="editData">
+            </div>
+            <div class="mb-3" id="editCallDiv">
+              <label for="editCall" class="form-label">Call</label>
+              <select class="form-select" id="editCall">
+                <option value="UNLIMITED">Unlimited</option>
+                <option value="LIMITED">Limited</option>
+              </select>
+            </div>
+            <div class="mb-3" id="editValidityDiv">
+              <label for="editValidity" class="form-label">Validity (Days)</label>
+              <input type="number" class="form-control" id="editValidity">
+            </div>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Category Modal -->
+  <div class="modal fade" id="addCategoryModal" tabindex="-1" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Category</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addCategoryForm">
+            <label for="categoryName">Category Name</label>
+            <input type="text" id="categoryName" class="form-control" required>
+
+            <label>Select Enabled Fields</label><br>
+            <input type="checkbox" name="enabledFields" value="price"> Price<br>
+            <input type="checkbox" name="enabledFields" value="dataLimit"> Data Limit<br>
+            <input type="checkbox" name="enabledFields" value="validityDays"> Validity Days<br>
+            <input type="checkbox" name="enabledFields" value="call"> Call<br>
+            <input type="checkbox" name="enabledFields" value="sms"> SMS<br>
+            <input type="checkbox" name="enabledFields" value="ott"> OTT<br>
+
+            <button type="submit" class="btn btn-success">Save Category</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+
+  <!-- <script src="assets/js/main.js"></script>
+  <script src="assets/js/manage-plans.js"></script> -->
+
+</body>
+
+</html>

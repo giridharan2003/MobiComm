@@ -1,0 +1,237 @@
+/* Fonts from main.css */
+:root {
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Montserrat", sans-serif;
+  --nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors from main.css */
+:root { 
+  --background-color: #ffffff;
+  --default-color: #222222;
+  --heading-color: #172a28;
+  --accent-color: #008374;
+  --surface-color: #ffffff;
+  --contrast-color: #ffffff;
+}
+
+/* Category Tabs Container */
+#categoryTabsContainer {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    z-index: 1000;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+/* Category Tabs */
+#categoryTabs {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) #f1f1f1;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.recharge-card .bi{
+    color:tomato;
+    margin-right: 7px;
+}
+
+#categoryTabs::-webkit-scrollbar {
+    height: 8px;
+}
+
+#categoryTabs::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#categoryTabs::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+#categoryTabs .btn.category {
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-family: var(--nav-font);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--default-color);
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+    transition: all 0.3s ease;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+#categoryTabs .btn.category.active {
+    background-color: var(--accent-color);
+    color: var(--contrast-color);
+    border-color: var(--accent-color);
+}
+
+#categoryTabs .btn.category:hover {
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+    color: var(--contrast-color);
+}
+
+/* Recharge Card */
+.recharge-card {
+    background: linear-gradient(135deg, var(--surface-color) 0%, #f2f9f9 100%);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 25px;
+    width: 100%;
+    font-family: var(--default-font);
+    border: 1px solid color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+
+.recharge-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(45deg, #b78528, #20a100ee);
+    color: var(--contrast-color);
+    border-radius: 0 0 0 25px;
+    padding: 8px 20px;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: var(--heading-font);
+    transform-origin: top right;
+}
+
+
+@media (max-width: 1300px) {
+  .highlight-badge {
+    margin-bottom: 100px;
+    padding: 10px;
+    font-size: 10px;
+}
+}
+
+
+/* Icon Price Container */
+.icon-price-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.icon-price-container .icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.icon-price-container .icon i {
+    color: color-mix(in srgb, var(--accent-color), transparent 30%);
+    font-size: 32px;
+    z-index: 2;
+    transition: color 0.3s ease;
+}
+
+.icon-price-container .icon:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: color-mix(in srgb, var(--accent-color), transparent 95%);
+    border-radius: 50%;
+    z-index: 1;
+    transition: background 0.3s ease;
+}
+
+.recharge-card:hover .icon-price-container .icon i {
+    color: var(--accent-color);
+}
+
+.recharge-card:hover .icon-price-container .icon:before {
+    background: color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.icon-price-container .price {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: var(--heading-font);
+    margin: 0;
+}
+
+/* Card Body */
+.card-body {
+    margin-bottom: 15px;
+}
+
+.card-body p {
+    font-size: 15px;
+    color: var(--default-color);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.card-body p strong {
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+/* Card Footer */
+.card-footer .buy-now {
+    background: linear-gradient(90deg, var(--accent-color), #00b6a1);
+    color: var(--contrast-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.card-footer .buy-now:hover {
+    background: linear-gradient(90deg, #00695c, var(--accent-color));
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .recharge-card {
+        padding: 20px;
+    }
+
+    .icon-price-container .price {
+        font-size: 22px;
+    }
+
+    .card-body p {
+        font-size: 14px;
+    }
+}
+

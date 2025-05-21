@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Mobi Comm | Prepaid Recharge Made Easy</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/index.css" rel="stylesheet">
+  <link href="assets/css/recharge-plans.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+  <header id="header" class="header fixed-top">
+    <div class="branding d-flex align-items-center">
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <h1 class="sitename">Mobi Comm</h1>
+          <span>.</span>
+        </a>
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="recharge-plans.html">Recharge Plans</a></li>
+            <li><a href="errorpage.html">Profile</a></li>
+            <li><a href="about-us.html">About Us</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li class="dropdown"></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="notificationContainer"></div>
+
+    <section id="hero" class="welcome-board section accent-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-5 justify-content-between">
+          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" style="margin-top: 0;">
+            <h2 id="welcome-head"><span>Welcome to </span><span class="accent">Mobi Comm</span></h2>
+            <p id="welcome-para">Recharge your prepaid mobile quickly and securely. Get the best plans for data, talk time, and unlimited
+              packs in just a few clicks.</p>
+            <div class="d-flex">
+              <a href="register.html" id="register" class="btn-get-started">Get MobiComm Sim Now</a>
+              <a id="logoutBtn" class="btn-logout">LogOut <i class="bi bi-arrow-bar-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/hero-img.svg" class="img-fluid" alt="Prepaid Recharge Illustration">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-container">
+          <div class="login-card row gy-4 m-1 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-xl-5 col-md-6">
+              <div class="icon-box" id="loginSection">
+                <div class="icon"><i class="bi bi-phone"></i></div>
+                <h4 class="title">Verify Mobile Number</h4>
+                <div id="mobileInputSection" class="gap-2">
+                  <input type="text" id="mobileNumber" class="ml-3"
+                    placeholder="Enter Mobile Number" maxlength="10">
+                  <button id="loginButton">Verify</button>
+                </div>
+                <p id="errorMessage"></p>
+                <p id="errorMessage" style="color: red; display: none;"></p>
+                <span id="loading" style="display: none;">Logging in...</span>
+              </div>
+            </div>
+          </div>
+    </section>
+
+    <section id="recharges" class="recharges section" style="background-color: #008374;">
+      <div class="container section-title" data-aos="fade-up">
+        <h3 class="text-white">Explore the most popular prepaid recharge plans with the best offers in Top Up / TalkTime.</h3>
+      </div>
+      <div class="container">
+        <div class="row mt-3" id="plansContainer">
+          <!-- Plan cards will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="content px-xl-5">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+              <p>
+                Find answers to common questions about Mobi Comm's prepaid recharge services, plans, and offers. Get
+                instant solutions for your queries.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-container">
+              <div class="faq-item faq-active">
+                <h3><span class="num">1.</span> <span>How do I recharge my prepaid mobile on Mobi Comm?</span></h3>
+                <div class="faq-content">
+                  <p>Simply enter your mobile number, select your operator, choose a plan, and proceed with payment.
+                    Your recharge will be processed instantly.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3><span class="num">2.</span> <span>What payment methods are accepted for recharges?</span></h3>
+                <div class="faq-content">
+                  <p>We accept credit/debit cards, UPI, net banking, and digital wallets like Paytm, Google Pay, and
+                    PhonePe.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3><span class="num">3.</span> <span>How can I check my recharge history?</span></h3>
+                <div class="faq-content">
+                  <p>Log in to your Mobi Comm account, go to 'My Recharges,' and view your past transactions along with
+                    their status.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3><span class="num">4.</span> <span>What should I do if my recharge fails?</span></h3>
+                <div class="faq-content">
+                  <p>If your recharge fails but the amount is deducted, it will be refunded within 24 hours. You can
+                    also contact our support team for assistance.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+              <div class="faq-item">
+                <h3><span class="num">5.</span> <span>Are there any special offers or cashback on recharges?</span></h3>
+                <div class="faq-content">
+                  <p>Yes! We offer exclusive discounts, promo codes, and cashback offers on selected prepaid recharges.
+                    Check our 'Offers' section for details.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" class="contact section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact Us</h2>
+        <p>Have questions about your prepaid recharge? Reach out to us for quick assistance and support.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gx-lg-0 gy-4">
+          <div class="col-lg-4">
+            <div class="info-container d-flex flex-column align-items-center justify-content-center">
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h3>Our Office</h3>
+                  <p>Salem, Tamil Nadu, India</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+                <i class="bi bi-telephone flex-shrink-0"></i>
+                <div>
+                  <h3>Customer Support</h3>
+                  <p>+91 9851236475</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h3>Email Support</h3>
+                  <p>mobicomm@support.com</p>
+                </div>
+              </div>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+                <i class="bi bi-clock flex-shrink-0"></i>
+                <div>
+                  <h3>Working Hours</h3>
+                  <p>Mon-Sat: 9AM - 9PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade" data-aos-delay="100">
+              <div class="row gy-4">
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="8" placeholder="Your Message"
+                    required=""></textarea>
+                </div>
+                <!-- <div class="col-md-12 text-center">
+                  <div class="loading">Processing...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent successfully. Our team will get back to you soon!
+                </div> -->
+                <button type="submit">Send Message</button>
+              </div>
+          </div>
+          </form>
+        </div>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Mobi Comm</span>
+          </a>
+          <p>Stay connected with seamless prepaid mobile recharges. Get the best offers, instant top-ups, and secure
+            transactions with Mobi Comm.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Recharge Plans</a></li>
+            <li><a href="#">Offers</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Salem, Tamil Nadu</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 9851236475</span></p>
+          <p><strong>Email:</strong> <span>mobicomm@support.com</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Mobi Comm</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Designed by <a>TechM</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Plan Modal -->
+  <div class="modal fade" id="planModal" tabindex="-1" aria-labelledby="planModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="planModalLabel">Plan Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modalBody">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</body>
+
+</html>

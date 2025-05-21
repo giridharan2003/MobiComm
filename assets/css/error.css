@@ -1,0 +1,40 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito", sans-serif;
+}
+
+main{
+  position: fixed;
+  width: 100%;
+}
+
+.error-404 {
+  padding: 30px;
+}
+
+.error-404 h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color:#008364;
+  margin-bottom: 30px;
+}
+
+.error-404 .btn {
+  background: #1f5a53;
+  color: #fff;
+  padding: 8px 30px;
+}
+
+.error-404 .btn:hover {
+  background: #3e4f6f;
+}
+
+@media (min-width: 992px) {
+  .error-404 img {
+    max-width: 50%;
+  }
+}
