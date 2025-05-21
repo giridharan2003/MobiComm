@@ -9,3 +9,4 @@ mvnw
 mvnw.cmd
 Backend/src/main/resources/application.properties
 /.metadata/
+Backend/src/main/resources/META-INF/additional-spring-configuration-metadata.json
