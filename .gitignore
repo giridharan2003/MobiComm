@@ -1,0 +1,11 @@
+.mvn/
+.settings/
+target/
+.classpath
+.factorypath
+.project
+HELP.md
+mvnw
+mvnw.cmd
+Backend/src/main/resources/application.properties
+/.metadata/
